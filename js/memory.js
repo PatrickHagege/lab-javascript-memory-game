@@ -16,6 +16,6 @@ class MemoryGame {
     // ... write your code here
   }
 }
-
+console.log("coucou");
 // The following is required for automated testing. Please, ignore it.
 if (typeof module !== 'undefined') module.exports = MemoryGame;
