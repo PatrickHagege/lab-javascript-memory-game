@@ -7,8 +7,22 @@ class MemoryGame {
     // add the rest of the class properties here
   }
 
-  shuffleCards() {
-    // ... write your code here
+  shuffleCards(cards) {
+    if(!this.cards) return undefined;
+    let buffer = [...this.cards];
+    this.cards = [];
+    let currentIndex = buffer.length;
+    let randomIndex = 0;
+    while (currentIndex > 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+      this.cards.push(buffer[randomIndex]);
+      console.log("cards contient", this.cards)
+      buffer.splice(randomIndex, 1);
+      console.log("apres le splice buffer contient :", buffer);
+      console.log("apres le splice cards contient :", this.cards);
+      currentIndex--;
+    }
+    return this.cards;
   }
 
   checkIfPair(card1, card2) {
