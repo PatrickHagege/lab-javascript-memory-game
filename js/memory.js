@@ -36,9 +36,10 @@ class MemoryGame {
   }
 
   checkIfFinished() {
-    // ... write your code here
+    console.log(this.pairsGuessed);
+    return (this.pairsGuessed === this.cards.length/2);
   }
 }
-console.log("coucou");
+//console.log("coucou");
 // The following is required for automated testing. Please, ignore it.
 if (typeof module !== 'undefined') module.exports = MemoryGame;

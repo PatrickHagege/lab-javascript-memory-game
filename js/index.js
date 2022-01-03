@@ -42,9 +42,28 @@ window.addEventListener('load', (event) => {
   document.querySelector('#memory-board').innerHTML = html;
 
   // Bind the click event of each element to a function
-  document.querySelectorAll('.card').forEach((card) => {
-    card.addEventListener('click', () => {
-      // TODO: write some code here
+  document.querySelectorAll('.card').forEach(function (card) {
+    
+    card.addEventListener('click',(e) => {
+      //TODO: write some code here
+      card.classList.toggle('turned');
+    // let backDiv = document.querySelector(".back");
+    // let frontDiv = document.querySelector(".front");
+    //console.log(backDiv);
+    //e.currentTarget.classList.toggle('turned');
+    memoryGame.pickedCards.push(card);
+    console.log(memoryGame.pickedCards);
+    if(memoryGame.pickedCards.length === 2) memoryGame.checkIfPair(memoryGame.pickedCards[0], memoryGame.pickedCards[1]);
+    console.log(memoryGame.checkIfPair(memoryGame.pickedCards[0], memoryGame.pickedCards[1]))
+    //  console.log("card => ", card,"e.target = ",e.target, "e.currentTarget = ", e.currentTarget, "e.eventPhase = ",e.eventPhase, "e =>",e);
+    // console.log(e.composedPath());
+    // console.log(memoryGame.checkIfPair());
+     //backDiv.classList.toggle("back");
+    // frontDiv.classList.add("back");
+    // backDiv.classList.remove("back");
+    // frontDiv.classList.remove("front");
+    //console.log(e.target);
+    //console.log(document);
       console.log(`Card clicked: ${card}`);
     });
   });
